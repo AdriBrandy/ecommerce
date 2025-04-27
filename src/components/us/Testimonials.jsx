@@ -3,7 +3,7 @@ import testimony from '../../constants/testimonials';
 
 const Testimonials = () => {
   return (
-    <div className="p-8 flex flex-wrap w-full bg-gradient-to-b from-gray-900 via-gray-700 to-gray-700">
+    <div id='testimony' className="p-8 flex flex-wrap w-full bg-gradient-to-b from-gray-900 via-gray-700 to-gray-700">
       <div className="mx-auto w-full max-w-7xl px-4">
         <div className="flex flex-wrap justify-center gap-6">
           {testimony.map((test) => (

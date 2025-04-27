@@ -2,43 +2,39 @@ import React from "react";
 import { useState } from "react";
 import {Dialog,DialogPanel,Disclosure,DisclosureButton,DisclosurePanel,Popover,PopoverButton,PopoverGroup,PopoverPanel,} from "@headlessui/react";
 import {ArrowPathIcon,Bars3Icon,ChartPieIcon,CursorArrowRaysIcon,FingerPrintIcon,SquaresPlusIcon,XMarkIcon,} from "@heroicons/react/24/outline";
-import {ChevronDownIcon,PhoneIcon,PlayCircleIcon,} from "@heroicons/react/20/solid";
+import {ChevronDownIcon,PhoneIcon,PlayCircleIcon,ReceiptPercentIcon,BookOpenIcon,PencilSquareIcon} from "@heroicons/react/20/solid";
 
 const products = [
   {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
+    name: "Ofertas",
+    description: "Aprovecha nuestras ofertas",
+    href: "#allcourses",
+    icon: ReceiptPercentIcon,
   },
   {
-    name: "Engagement",
-    description: "Speak directly to your customers",
+    name: "Cursos de Marketing",
+    description: "Haz crecer tu negocio",
+    href: "#",
+    icon: BookOpenIcon,
+  },
+  {
+    name: "Cursos de Programación",
+    description: "Automatiza tu trabajo",
     href: "#",
     icon: CursorArrowRaysIcon,
   },
   {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
+    name: "Cursos de Diseño",
+    description: "Crea tu marca",
     href: "#",
-    icon: FingerPrintIcon,
+    icon: PencilSquareIcon,
   },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
+  
+ 
 ];
 const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
+  { name: "Ver video institucional", href: "#", icon: PlayCircleIcon },
+  { name: "Quiero que me llamen", href: "#", icon: PhoneIcon },
 ];
 
 const Navigation = () => {
@@ -50,7 +46,7 @@ const Navigation = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
               alt=""
@@ -72,7 +68,7 @@ const Navigation = () => {
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-white hover:text-violet-300">
-              Product
+              Clases
               <ChevronDownIcon
                 aria-hidden="true"
                 className="size-5 flex-none text-white  hover:text-violet-300"
@@ -126,21 +122,25 @@ const Navigation = () => {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm/6 font-semibold text-white hover:text-violet-300">
-            Features
+          <a href="/us" className="text-sm/6 font-semibold text-white hover:text-violet-300">
+            Sobre Nosotros
           </a>
-          <a href="#" className="text-sm/6 font-semibold text-white hover:text-violet-300">
+          {/* <a href="#" className="text-sm/6 font-semibold text-white hover:text-violet-300">
             Marketplace
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-white hover:text-violet-300">
-            Company
+          </a> */}
+          <a href="/contact" className="text-sm/6 font-semibold text-white hover:text-violet-300">
+            Contacto
           </a>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-white hover:text-violet-300">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
+          <a href="/createaccount" className="pr-4 text-sm/6 font-semibold text-white hover:text-violet-300">
+            Create an Account <span aria-hidden="true">&rarr;</span>
+          </a>
+          <a href="/login" className="text-sm/6 font-semibold text-white hover:text-violet-300">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
+        
       </nav>
       <Dialog
         open={mobileMenuOpen}
@@ -151,7 +151,7 @@ const Navigation = () => {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">SkillBoost Academy</span>
               <img
                 alt=""
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
@@ -172,7 +172,7 @@ const Navigation = () => {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Product
+                    Clases
                     <ChevronDownIcon
                       aria-hidden="true"
                       className="size-5 flex-none group-data-open:rotate-180"
@@ -192,27 +192,33 @@ const Navigation = () => {
                   </DisclosurePanel>
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/us"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  Sobre Nosotros
                 </a>
-                <a
+                {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Marketplace
-                </a>
+                </a> */}
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Company
+                  Contacto
                 </a>
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="/createaccount"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                >
+                  Create an Account
+                </a>
+                <a
+                  href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log in

@@ -13,7 +13,7 @@ const Footer = () => {
         </a>
 
         <p class="text-sm text-gray-600 dark:text-gray-300">
-          © Copyright 2021. All Rights Reserved.
+          © {new Date().getFullYear()}. All Rights Reserved.
         </p>
 
         <div class="flex -mx-2">
